@@ -1,0 +1,37 @@
+NAME
+    Attribute::Overload - Attribute that makes overloading easier
+
+SYNOPSIS
+      use Attribute::Overload;
+      sub add : Overload(+) { ... }
+
+DESCRIPTION
+    The `Overload' attribute, when used on a subroutine, declares that
+    subroutine as handler in the current package for the operation(s)
+    indicated by the attribute options. Thus it frees you from the
+    implementation details of how to declare overloads and keeps the
+    definitions where they belong, with the operation handlers.
+
+    For details of which operations can be overloaded and what the
+    overloading function gets passed see the `overload' manpage.
+
+    Note that you can't overload constants this way, since this has to
+    happen during BEGIN time, but attributes are only evaluated at CHECK
+    time (at least as far as `Attribute::Handlers' is concerned).
+
+BUGS
+    None known so far. If you find any bugs or oddities, please do inform
+    the author.
+
+AUTHOR
+    Marcel Grunauer, <marcel@codewerk.com>
+
+COPYRIGHT
+    Copyright 2001 Marcel Grunauer. All rights reserved.
+
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
+SEE ALSO
+    perl(1), overload(3pm), Attribute::Handlers(3pm).
+
