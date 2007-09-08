@@ -1,37 +1,27 @@
-NAME
-    Attribute::Overload - Attribute that makes overloading easier
+This is the Perl module Attribute::Overload.
 
-SYNOPSIS
-      use Attribute::Overload;
-      sub add : Overload(+) { ... }
+INSTALLATION
 
-DESCRIPTION
-    The `Overload' attribute, when used on a subroutine, declares that
-    subroutine as handler in the current package for the operation(s)
-    indicated by the attribute options. Thus it frees you from the
-    implementation details of how to declare overloads and keeps the
-    definitions where they belong, with the operation handlers.
+Attribute::Overload installation is straightforward. If your CPAN shell is set
+up, you should just be able to do
 
-    For details of which operations can be overloaded and what the
-    overloading function gets passed see the `overload' manpage.
+    % cpan Attribute::Overload
 
-    Note that you can't overload constants this way, since this has to
-    happen during BEGIN time, but attributes are only evaluated at CHECK
-    time (at least as far as `Attribute::Handlers' is concerned).
+Download it, unpack it, then build it as per the usual:
 
-BUGS
-    None known so far. If you find any bugs or oddities, please do inform
-    the author.
+    % perl Makefile.PL
+    % make && make test
 
-AUTHOR
-    Marcel Grunauer, <marcel@codewerk.com>
+Then install it:
 
-COPYRIGHT
-    Copyright 2001 Marcel Grunauer. All rights reserved.
+    % make install
 
-    This library is free software; you can redistribute it and/or modify it
-    under the same terms as Perl itself.
+DOCUMENTATION
 
-SEE ALSO
-    perl(1), overload(3pm), Attribute::Handlers(3pm).
+Attribute::Overload documentation is available as in POD. So you can do:
 
+    % perldoc Attribute::Overload
+
+to read the documentation online with your favorite pager.
+
+Marcel Gruenauer

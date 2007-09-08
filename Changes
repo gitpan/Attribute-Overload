@@ -1,5 +1,10 @@
 Revision history for Perl extension Attribute::Overload.
 
+0.03  Sa Sep  8 23:28:30 CEST 2007
+	- converted to new-style distro (ShipIt, Module::Install)
+    - fixed documentation
+    - moved files to where they should be
+
 0.02  Wed May 30 23:03:14 2001
 	- added documentation, tests
 

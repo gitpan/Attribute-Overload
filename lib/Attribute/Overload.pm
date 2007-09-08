@@ -4,7 +4,7 @@ use warnings;
 use strict;
 use Attribute::Handlers;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 # RAWDATA to get '""' as such;
 # CODE would interpret it as empty string and return nothing
@@ -80,24 +80,34 @@ Note that you can't overload constants this way, since this has to
 happen during BEGIN time, but attributes are only evaluated at
 CHECK time (at least as far as C<Attribute::Handlers> is concerned).
 
-=head1 BUGS
+=head1 BUGS AND LIMITATIONS
 
-None known so far. If you find any bugs or oddities, please do
-inform the author.
+No bugs have been reported.
+
+Please report any bugs or feature requests to
+C<bug-attribute-overload@rt.cpan.org>, or through the web interface at
+L<http://rt.cpan.org>.
+
+=head1 INSTALLATION
+
+See perlmodinstall for information and options on installing Perl modules.
+
+=head1 AVAILABILITY
+
+The latest version of this module is available from the Comprehensive Perl
+Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
+site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
 
 =head1 AUTHOR
 
-Marcel Grunauer, <marcel@codewerk.com>
+Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
 
-=head1 COPYRIGHT
+=head1 COPYRIGHT AND LICENSE
 
-Copyright 2001 Marcel Grunauer. All rights reserved.
+Copyright 2001-2007 by Marcel GrE<uuml>nauer
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
-=head1 SEE ALSO
-
-perl(1), overload(3pm), Attribute::Handlers(3pm).
-
 =cut
+
