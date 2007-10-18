@@ -4,7 +4,8 @@ use warnings;
 use strict;
 use Attribute::Handlers;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
+
 
 # RAWDATA to get '""' as such;
 # CODE would interpret it as empty string and return nothing
@@ -19,6 +20,7 @@ sub UNIVERSAL::Overload : ATTR(CODE,RAWDATA) {
 		$overload{$pkg}{$_} = *{$symbol}{NAME};
 	}
 }
+
 
 sub INIT {
 	# only eval here, because multiple overloaded subs must only
@@ -53,7 +55,10 @@ sub INIT {
 	die $@ if $@;
 }
 
-42;
+
+1;
+
+
 __END__
 
 =head1 NAME
@@ -67,18 +72,23 @@ Attribute::Overload - Attribute that makes overloading easier
 
 =head1 DESCRIPTION
 
-The C<Overload> attribute, when used on a subroutine, declares that
-subroutine as handler in the current package for the operation(s)
-indicated by the attribute options. Thus it frees you from the
-implementation details of how to declare overloads and keeps the
-definitions where they belong, with the operation handlers.
+The C<Overload> attribute, when used on a subroutine, declares that subroutine
+as the handler in the current package for the operation(s) indicated by the
+attribute options. Thus it frees you from the implementation details of how to
+declare overloads and keeps the definitions where they belong, with the
+operation handlers.
 
-For details of which operations can be overloaded and what the
-overloading function gets passed see the C<overload> manpage.
+For details of which operations can be overloaded and what the overloading
+function gets passed see the L<overload> manpage.
 
-Note that you can't overload constants this way, since this has to
-happen during BEGIN time, but attributes are only evaluated at
-CHECK time (at least as far as C<Attribute::Handlers> is concerned).
+Note that you can't overload constants this way, since this has to happen
+during BEGIN time, but attributes are only evaluated at CHECK time, at least
+as far as L<Attribute::Handlers> is concerned.
+
+=head1 TAGS
+
+If you talk about this module in blogs, on del.icio.us or anywhere else,
+please use the C<attributeoverload> tag.
 
 =head1 BUGS AND LIMITATIONS
 

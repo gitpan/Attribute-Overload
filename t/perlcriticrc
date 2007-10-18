@@ -1,0 +1,2 @@
+# we do eval $asset_pl a lot
+[-BuiltinFunctions::ProhibitStringyEval]
